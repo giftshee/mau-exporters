@@ -1,4 +1,4 @@
-/**
+﻿/**
 * Template Name: mau exporters
 * Template URL: https://bootstrapmade.com/nice-restaurant-bootstrap-template/
 * Updated: May 19 2025 with Bootstrap v5.3.6
@@ -2648,3 +2648,19 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
+
+/* MAU green hero slider arrows */
+.hero .hero-container .hero-swiper .swiper-button-next,
+.hero .hero-container .hero-swiper .swiper-button-prev {
+    color: #32834A !important;
+}
+
+.hero .hero-container .hero-swiper .swiper-button-next::after,
+.hero .hero-container .hero-swiper .swiper-button-prev::after {
+    color: #32834A !important;
+}
+
+.hero .hero-container .hero-swiper .swiper-button-next:hover,
+.hero .hero-container .hero-swiper .swiper-button-prev:hover {
+    color: #194D32 !important;
+}

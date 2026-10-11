@@ -1,149 +1,821 @@
+
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Home | MAU Vegetables Exporters{% endblock %}
 
 {% block content %}
 
+<style>
+/* =========================================================
+   MAU VEGETABLES EXPORTERS — PREMIUM HOMEPAGE HERO
+   Fresh green • Warm cream • Subtle gold
+========================================================= */
+
+#hero.mau-hero {
+    --mau-green: #32834A;
+    --mau-green-dark: #194D32;
+    --mau-green-deep: #123D28;
+    --mau-cream: #F4F8F0;
+    --mau-soft-green: #E7F2E3;
+    --mau-gold: #D9A441;
+    --mau-text: #405044;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 42px 0 48px !important;
+    background:
+        radial-gradient(ellipse at 90% 10%, rgba(217, 164, 65, .12), transparent 28%),
+        radial-gradient(ellipse at 4% 85%, rgba(50, 131, 74, .09), transparent 30%),
+        var(--mau-cream);
+}
+
+#hero.mau-hero::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    top: -180px;
+    left: 35%;
+    border: 1px solid rgba(50, 131, 74, .12);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#hero.mau-hero .mau-hero-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: clamp(20px, 5vw, 76px);
+    padding-right: clamp(20px, 5vw, 76px);
+}
+
+#hero.mau-hero .mau-hero-row {
+    align-items: center !important;
+    --bs-gutter-x: 3rem;
+    --bs-gutter-y: 2rem;
+}
+
+/* LEFT CONTENT */
+
+#hero.mau-hero .mau-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 26px 12px 26px 0;
+}
+
+#hero.mau-hero .mau-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    width: fit-content;
+    margin-bottom: 24px;
+    padding: 10px 16px;
+    border: 1px solid rgba(50, 131, 74, .17);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .82);
+    color: var(--mau-green-dark);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 18px rgba(25, 77, 50, .05);
+}
+
+#hero.mau-hero .mau-eyebrow i {
+    color: var(--mau-green);
+    font-size: 15px;
+}
+
+#hero.mau-hero .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0 !important;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    color: var(--mau-green-dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+
+#hero.mau-hero .mau-status-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border-radius: 50%;
+    background: #39A95D;
+    box-shadow: 0 0 0 4px rgba(57, 169, 93, .13);
+}
+
+#hero.mau-hero .headline {
+    max-width: 720px;
+    margin: 0 0 22px;
+    color: var(--mau-green-deep);
+    font-size: clamp(36px, 3.8vw, 58px);
+    font-weight: 850;
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+    text-wrap: balance;
+}
+
+#hero.mau-hero .headline .mau-heading-highlight {
+    color: var(--mau-green);
+}
+
+#hero.mau-hero .description {
+    max-width: 560px;
+    margin-bottom: 25px !important;
+    color: var(--mau-text);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+#hero.mau-hero .opening-hours {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    margin-bottom: 30px !important;
+    padding: 13px 17px;
+    border: 1px solid #DCE8D8;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .76);
+    color: var(--mau-green-dark);
+    font-size: 14px;
+    font-weight: 650;
+}
+
+#hero.mau-hero .opening-hours i {
+    display: grid;
+    place-items: center;
+    width: 37px;
+    height: 37px;
+    border-radius: 11px;
+    background: var(--mau-soft-green);
+    color: var(--mau-green);
+    font-size: 18px;
+}
+
+#hero.mau-hero .mau-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 32px !important;
+}
+
+#hero.mau-hero .mau-action-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 15px 23px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 750;
+    text-decoration: none;
+    transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+#hero.mau-hero .btn-book {
+    border: 1px solid var(--mau-green);
+    background: var(--mau-green);
+    color: #fff;
+    box-shadow: 0 10px 22px rgba(50, 131, 74, .20);
+}
+
+#hero.mau-hero .btn-book:hover {
+    transform: translateY(-3px);
+    border-color: var(--mau-green-dark);
+    background: var(--mau-green-dark);
+    color: #fff;
+    box-shadow: 0 14px 26px rgba(25, 77, 50, .23);
+}
+
+#hero.mau-hero .btn-store {
+    border: 1px solid #C8D8C6;
+    background: #fff;
+    color: var(--mau-green-dark);
+}
+
+#hero.mau-hero .btn-store:hover {
+    transform: translateY(-3px);
+    border-color: var(--mau-green);
+    background: var(--mau-soft-green);
+    color: var(--mau-green-dark);
+}
+
+#hero.mau-hero .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0 !important;
+}
+
+#hero.mau-hero .social-links::before {
+    content: "FOLLOW OUR JOURNEY";
+    margin-right: 5px;
+    color: #718273;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+#hero.mau-hero .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin: 0 !important;
+    border: 1px solid #DCE8D8;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--mau-green-dark);
+    font-size: 16px;
+    text-decoration: none;
+    transition: all .25s ease;
+}
+
+#hero.mau-hero .social-links a:hover {
+    transform: translateY(-3px);
+    border-color: var(--mau-green);
+    background: var(--mau-green);
+    color: #fff;
+}
+
+/* RIGHT SIDE / IMAGE CAROUSEL */
+
+#hero.mau-hero .mau-hero-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    padding: 16px 12px 22px;
+}
+
+#hero.mau-hero .mau-image-backdrop {
+    position: absolute;
+    top: 5%;
+    right: 4%;
+    bottom: 5%;
+    left: 4%;
+    border: 1px solid rgba(50, 131, 74, .12);
+    border-radius: 36px;
+    background: linear-gradient(145deg, #E8F3E4, #FDFCF4);
+    transform: rotate(3deg);
+}
+
+#hero.mau-hero .hero-swiper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    overflow: visible;
+    border-radius: 28px;
+    background: transparent;
+}
+
+#hero.mau-hero .hero-swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+#hero.mau-hero .hero-swiper .swiper-slide {
+    height: auto;
+}
+
+#hero.mau-hero .img-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, .9);
+    border-radius: 28px;
+    background: #fff;
+    box-shadow: 0 24px 65px rgba(25, 77, 50, .15);
+}
+
+#hero.mau-hero .img-container > img {
+    display: block;
+    width: 100% !important;
+    height: clamp(280px, 32vw, 410px) !important;
+    max-height: 410px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px !important;
+    transition: transform .6s ease;
+}
+
+#hero.mau-hero .hero-swiper:hover .swiper-slide-active .img-container > img {
+    transform: scale(1.025);
+}
+
+/* Carousel navigation */
+
+#hero.mau-hero .hero-swiper .swiper-button-next,
+#hero.mau-hero .hero-swiper .swiper-button-prev {
+    top: 50%;
+    width: 47px;
+    height: 47px;
+    margin-top: -23px;
+    border: 1px solid rgba(255, 255, 255, .85);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--mau-green) !important;
+    box-shadow: 0 7px 22px rgba(25, 77, 50, .15);
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+#hero.mau-hero .hero-swiper .swiper-button-next {
+    right: -18px;
+}
+
+#hero.mau-hero .hero-swiper .swiper-button-prev {
+    left: -18px;
+}
+
+#hero.mau-hero .hero-swiper .swiper-button-next::after,
+#hero.mau-hero .hero-swiper .swiper-button-prev::after {
+    color: var(--mau-green) !important;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+#hero.mau-hero .hero-swiper .swiper-button-next:hover,
+#hero.mau-hero .hero-swiper .swiper-button-prev:hover {
+    transform: scale(1.06);
+    background: var(--mau-green);
+    color: #fff !important;
+}
+
+#hero.mau-hero .hero-swiper .swiper-button-next:hover::after,
+#hero.mau-hero .hero-swiper .swiper-button-prev:hover::after {
+    color: #fff !important;
+}
+
+/* Admin controls */
+
+#hero.mau-hero .mau-admin-card {
+    overflow: hidden;
+    border: 1px solid #DCE8D8;
+    border-radius: 18px;
+    background: #fff;
+}
+
+#hero.mau-hero .mau-admin-card .card-body {
+    padding: 24px;
+}
+
+#hero.mau-hero .mau-admin-card .card-title {
+    color: var(--mau-green-dark);
+    font-weight: 800;
+}
+
+#hero.mau-hero .mau-admin-card .form-label {
+    color: var(--mau-green-dark);
+    font-weight: 650;
+}
+
+#hero.mau-hero .mau-admin-card .form-control {
+    border-color: #DCE8D8;
+    border-radius: 10px;
+    padding: 11px 13px;
+}
+
+#hero.mau-hero .mau-admin-card .form-control:focus {
+    border-color: var(--mau-green);
+    box-shadow: 0 0 0 .2rem rgba(50, 131, 74, .12);
+}
+
+#hero.mau-hero .mau-admin-card .btn-primary {
+    border-color: var(--mau-green);
+    background: var(--mau-green);
+}
+
+.mau-home-messages .alert {
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(25, 77, 50, .06);
+}
+
+/* TABLET */
+
+@media (max-width: 991.98px) {
+    #hero.mau-hero {
+        padding: 38px 0 55px !important;
+    }
+
+    #hero.mau-hero .mau-hero-row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    #hero.mau-hero .mau-hero-content {
+        padding: 16px 4px 8px;
+    }
+
+    #hero.mau-hero .headline {
+        max-width: 750px;
+        font-size: clamp(39px, 6vw, 57px);
+    }
+
+    #hero.mau-hero .description {
+        max-width: 700px;
+    }
+
+    #hero.mau-hero .mau-hero-visual {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 15px 20px 25px;
+    }
+
+    #hero.mau-hero .img-container > img {
+        height: clamp(300px, 55vw, 430px) !important;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 575.98px) {
+    #hero.mau-hero {
+        padding: 26px 0 38px !important;
+    }
+
+    #hero.mau-hero .mau-hero-container {
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    #hero.mau-hero .mau-hero-content {
+        padding: 8px 0;
+    }
+
+    #hero.mau-hero .mau-eyebrow {
+        margin-bottom: 18px;
+        padding: 9px 13px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    #hero.mau-hero .headline {
+        margin-bottom: 17px;
+        font-size: clamp(35px, 9vw, 46px);
+        line-height: 1.13;
+        letter-spacing: -1.3px;
+    }
+
+    #hero.mau-hero .description {
+        margin-bottom: 20px !important;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    #hero.mau-hero .opening-hours {
+        margin-bottom: 23px !important;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    #hero.mau-hero .opening-hours i {
+        width: 33px;
+        height: 33px;
+        font-size: 16px;
+    }
+
+    #hero.mau-hero .mau-action-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 11px;
+        margin-bottom: 25px !important;
+    }
+
+    #hero.mau-hero .mau-action-buttons .btn {
+        width: 100%;
+        min-height: 50px;
+        padding: 13px 16px;
+        font-size: 13px;
+    }
+
+    #hero.mau-hero .social-links {
+        gap: 8px;
+    }
+
+    #hero.mau-hero .social-links::before {
+        width: 100%;
+        margin-bottom: 3px;
+    }
+
+    #hero.mau-hero .social-links a {
+        width: 36px;
+        height: 36px;
+    }
+
+    #hero.mau-hero .mau-hero-visual {
+        padding: 12px 8px 20px;
+    }
+
+    #hero.mau-hero .mau-image-backdrop {
+        top: 4%;
+        right: 2%;
+        bottom: 4%;
+        left: 2%;
+        border-radius: 23px;
+    }
+
+    #hero.mau-hero .hero-swiper {
+        border-radius: 20px;
+    }
+
+    #hero.mau-hero .img-container {
+        padding: 7px;
+        border-radius: 21px;
+    }
+
+    #hero.mau-hero .img-container > img {
+        height: 290px !important;
+        border-radius: 15px !important;
+    }
+
+    #hero.mau-hero .hero-swiper .swiper-button-next,
+    #hero.mau-hero .hero-swiper .swiper-button-prev {
+        width: 38px;
+        height: 38px;
+        margin-top: -19px;
+    }
+
+    #hero.mau-hero .hero-swiper .swiper-button-next {
+        right: -10px;
+    }
+
+    #hero.mau-hero .hero-swiper .swiper-button-prev {
+        left: -10px;
+    }
+
+    #hero.mau-hero .hero-swiper .swiper-button-next::after,
+    #hero.mau-hero .hero-swiper .swiper-button-prev::after {
+        font-size: 13px;
+    }
+
+    #hero.mau-hero .mau-admin-card .card-body {
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #hero.mau-hero *,
+    #hero.mau-hero *::before,
+    #hero.mau-hero *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+
 <!-- Flash Messages -->
 {% if messages %}
-  <div class="messages container mt-3">
+<div class="container mt-3 mau-home-messages">
     {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     {% endfor %}
-  </div>
+</div>
 {% endif %}
 
-<!-- ==================== Hero Section ==================== -->
-<section id="hero" class="hero section py-5">
-  <div class="container-fluid" data-aos="fade-up">
-    <div class="row g-4 align-items-start">
+<!-- Premium Hero Section -->
+<section id="hero" class="hero section mau-hero">
+    <div class="container-fluid mau-hero-container" data-aos="fade-up">
+        <div class="row mau-hero-row">
 
-      <!-- 👉 Left Column: Content -->
-      <div class="col-lg-6">
-        <div class="p-4 d-flex flex-column justify-content-center h-100">
+            <!-- Left Column: Hero Content -->
+            <div class="col-lg-6">
+                <div class="mau-hero-content d-flex flex-column justify-content-center h-100">
 
-          <div class="status-badge mb-3">Orders Open</div>
+                    <div class="mau-eyebrow">
+                        <i class="bi bi-leaf-fill"></i>
+                        Fresh from our farms
+                    </div>
 
-          <h2 class="headline mb-3">Cultivating Quality, Harvesting Trust</h2>
-          <p class="description mb-4">
-            Experience the richness of nature through our organic farm produce.
-            Grown with care and harvested with integrity, straight from our fields to your table.
-          </p>
+                    <div class="status-badge mb-3">
+                        <span class="mau-status-dot"></span>
+                        Orders Open
+                    </div>
 
-          <div class="opening-hours mb-4">
-            <i class="bi bi-clock me-2"></i>
-            <span>Available Daily: 6am - 6pm</span>
-          </div>
+                    <h1 class="headline">
+                        Cultivating Quality,
+                        <span class="mau-heading-highlight">Harvesting Trust.</span>
+                    </h1>
 
-          <div class="btn-group mb-4">
-            <a href="#book-an-order" class="btn btn-book btn-primary me-2">book an Order</a>
-            <a href="#store" class="btn btn-store btn-outline-secondary">View Farm Products</a>
-          </div>
+                    <p class="description">
+                        Experience the richness of nature through our fresh farm produce.
+                        Grown with care and harvested with integrity, bringing quality
+                        vegetables from our fields closer to your table.
+                    </p>
 
-          <div class="social-links mt-auto">
-            <a href="https://www.facebook.com/YourPage" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/YourPage" target="_blank" class="me-2"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.twitter.com/YourPage" target="_blank" class="me-2"><i class="bi bi-twitter"></i></a>
-            <a href="https://www.youtube.com/YourPage" target="_blank"><i class="bi bi-youtube"></i></a>
-            <a href="https://www.tiktok.com/YourPage" target="_blank"><i class="bi bi-tiktok"></i></a>
-          </div>
+                    <div class="opening-hours">
+                        <i class="bi bi-clock"></i>
+                        <span>Available Daily: 6:00 AM – 6:00 PM</span>
+                    </div>
 
-        </div>
-      </div>
+                    <!-- FIXED: Use Django URL names rather than page-local anchors -->
+                    <div class="mau-action-buttons mb-4">
+                        <a href="{% url 'exporters_app:booking' %}" class="btn btn-book">
+                            Book an Order
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
 
-      <!-- 👉 Right Column: Carousel & Admin Form -->
-      <div class="col-lg-6">
-        <div class="d-flex flex-column align-items-center px-3 py-4">
+                        <a href="{% url 'exporters_app:store' %}" class="btn btn-store">
+                            <i class="bi bi-basket2"></i>
+                            View Farm Products
+                        </a>
+                    </div>
 
-          <!-- 🖼️ Carousel -->
-          <div class="swiper hero-swiper init-swiper w-100" data-aos="zoom-out" data-aos-delay="100">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 800,
-                "autoplay": { "delay": 5000 },
-                "effect": "fade",
-                "slidesPerView": 1,
-                "navigation": {
-                  "nextEl": ".swiper-button-next",
-                  "prevEl": ".swiper-button-prev"
-                }
-              }
-            </script>
-            
+                    <!-- Replace placeholder social URLs with the company's real profiles -->
+                    <div class="social-links mt-auto">
+                        <a href="https://www.facebook.com/YourPage"
+                           target="_blank" rel="noopener noreferrer"
+                           aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
 
+                        <a href="https://www.instagram.com/YourPage"
+                           target="_blank" rel="noopener noreferrer"
+                           aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
 
-            <div class="swiper-wrapper">
-              {% for slide in carousel_images %}
-                <div class="swiper-slide">
-                  <div class="img-container position-relative text-center">
-                    <img 
-                      src="{{ slide.image.url }}" 
-                      alt="{{ slide.alt_text }}" 
-                      class="img-fluid rounded-4 w-75" 
-                      style="height: 300px; object-fit: cover;"
-                    >
+                        <a href="https://www.twitter.com/YourPage"
+                           target="_blank" rel="noopener noreferrer"
+                           aria-label="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/YourPage"
+                           target="_blank" rel="noopener noreferrer"
+                           aria-label="YouTube">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+
+                        <a href="https://www.tiktok.com/YourPage"
+                           target="_blank" rel="noopener noreferrer"
+                           aria-label="TikTok">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Column: Farm Image Carousel and Admin Controls -->
+            <div class="col-lg-6">
+                <div class="mau-hero-visual d-flex flex-column align-items-center">
+
+                    <div class="mau-image-backdrop" aria-hidden="true"></div>
+
+                    <!-- Image Carousel -->
+                    <div class="swiper hero-swiper init-swiper w-100"
+                         data-aos="zoom-out"
+                         data-aos-delay="100">
+
+                        <script type="application/json" class="swiper-config">
+                        {
+                            "loop": true,
+                            "speed": 800,
+                            "autoplay": {
+                                "delay": 5000,
+                                "disableOnInteraction": false
+                            },
+                            "effect": "fade",
+                            "fadeEffect": {
+                                "crossFade": true
+                            },
+                            "slidesPerView": 1,
+                            "navigation": {
+                                "nextEl": ".swiper-button-next",
+                                "prevEl": ".swiper-button-prev"
+                            }
+                        }
+                        </script>
+
+                        <div class="swiper-wrapper">
+                            {% for slide in carousel_images %}
+                            <div class="swiper-slide">
+                                <div class="img-container position-relative text-center">
+
+                                    <img
+                                        src="{{ slide.image.url }}"
+                                        alt="{{ slide.alt_text }}"
+                                        class="img-fluid"
+                                        loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                                        {% if forloop.first %}fetchpriority="high"{% endif %}
+                                    >
+
+                                    {% if is_admin %}
+                                    <form method="POST"
+                                          class="position-absolute top-0 end-0 m-3"
+                                          onsubmit="return confirm('Are you sure you want to delete this farm image?');">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="delete_image" value="{{ slide.id }}">
+
+                                        <button type="submit"
+                                                class="btn btn-sm btn-danger"
+                                                aria-label="Delete this farm image">
+                                            <i class="bi bi-trash"></i>
+                                            Delete
+                                        </button>
+                                    </form>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+
+                            {% empty %}
+                            <div class="swiper-slide">
+                                <div class="img-container text-center">
+                                    <img
+                                        src="{% static 'assets/img/restaurant/default-slide.jpg' %}"
+                                        alt="Fresh farm produce from MAU Vegetables Exporters"
+                                        class="img-fluid"
+                                        fetchpriority="high"
+                                    >
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="swiper-button-next" aria-label="Next farm image"></div>
+                        <div class="swiper-button-prev" aria-label="Previous farm image"></div>
+                    </div>
+
                     {% if is_admin %}
-                    <form method="POST" class="position-absolute top-0 end-0 m-2">
-                      {% csrf_token %}
-                      <input type="hidden" name="delete_image" value="{{ slide.id }}">
-                      <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                    </form>
+                    <!-- Admin Carousel Management -->
+                    <div class="admin-carousel-form mt-4 w-100">
+                        <div class="card shadow-sm mau-admin-card">
+                            <div class="card-body">
+
+                                <h5 class="card-title mb-2">
+                                    <i class="bi bi-images me-2"></i>
+                                    Manage Farm Carousel
+                                </h5>
+
+                                <p class="text-muted small mb-4">
+                                    Upload a new farm image to display on the homepage.
+                                </p>
+
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+
+                                    <div class="mb-3">
+                                        <label for="image" class="form-label">Farm Image</label>
+                                        <input
+                                            type="file"
+                                            name="image"
+                                            id="image"
+                                            class="form-control"
+                                            accept="image/*"
+                                            required
+                                        >
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="alt_text" class="form-label">Image Description</label>
+                                        <input
+                                            type="text"
+                                            name="alt_text"
+                                            id="alt_text"
+                                            maxlength="150"
+                                            class="form-control"
+                                            placeholder="e.g. Fresh carrots harvested from our farm"
+                                            required
+                                        >
+                                    </div>
+
+                                    <button type="submit" name="add_image" class="btn btn-primary">
+                                        <i class="bi bi-cloud-arrow-up me-2"></i>
+                                        Add Farm Image
+                                    </button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
                     {% endif %}
-                  </div>
+
                 </div>
-              {% empty %}
-                <div class="swiper-slide">
-                  <div class="img-container text-center">
-                    <img 
-                      src="{% static 'assets/img/restaurant/default-slide.jpg' %}" 
-                      alt="Default Farm Slide" 
-                      class="img-fluid rounded-4 w-75" 
-                      style="height: 300px; object-fit: cover;"
-                    >
-                  </div>
-                </div>
-              {% endfor %}
             </div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-          </div>
-
-          {% if is_admin %}
-          <!-- 🛠️ Admin Carousel Form -->
-          <div class="admin-carousel-form mt-4 w-100">
-            <div class="card shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title mb-3">Manage Farm Carousel</h5>
-
-                <form method="POST" enctype="multipart/form-data">
-                  {% csrf_token %}
-
-                  <div class="mb-3">
-                    <label for="image" class="form-label">Farm Image</label>
-                    <input type="file" name="image" id="image" class="form-control" required>
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="alt_text" class="form-label">Alt Text</label>
-                    <input type="text" name="alt_text" id="alt_text" maxlength="150" class="form-control" required>
-                  </div>
-
-                  <button type="submit" name="add_image" class="btn btn-primary">Add Farm Image</button>
-                </form>
-              </div>
-            </div>
-          </div>
-          {% endif %}
 
         </div>
-      </div>
-
     </div>
-  </div>
 </section>
-<!-- ================== /Hero Section =================== -->
 
 {% endblock %}

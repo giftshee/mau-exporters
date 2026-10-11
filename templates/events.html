@@ -47,15 +47,15 @@
     <div class="gallery-showcase" data-aos="fade-up" data-aos-delay="150">
       <div class="row g-3">
         <div class="col-lg-8">
-          <img src="{% static 'assets/img/restaurant/event-1.webp' %}" alt="Farm Event Space" class="img-fluid main-image" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{% static 'farm pro/farm_1.jpg' %}" alt="MAU farm and agricultural activities" class="img-fluid main-image" data-aos="zoom-in" data-aos-delay="200">
         </div>
         <div class="col-lg-4">
           <div class="row g-3">
             <div class="col-md-6 col-lg-12">
-              <img src="{% static 'assets/img/farm pro/static/farm pro/IMG-20250506-WA0015.jpg' %}" alt="Farm Market" class="img-fluid gallery-item" data-aos="zoom-in" data-aos-delay="250">
+              <img src="{% static 'farm pro/IMG-20250506-WA0015.jpg' %}" alt="Farm produce and farming activities" class="img-fluid gallery-item" data-aos="zoom-in" data-aos-delay="250">
             </div>
             <div class="col-md-6 col-lg-12">
-              <img src="{% static 'assets/img/farm pro/event-7.webp' %}" alt="Community Farming" class="img-fluid gallery-item" data-aos="zoom-in" data-aos-delay="300">
+              <img src="{% static 'farm pro/IMG-20250506-WA0016.jpg' %}" alt="Farm produce and agricultural activities" class="img-fluid gallery-item" data-aos="zoom-in" data-aos-delay="300">
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
                 {% if event.image %}
                   <img src="{{ event.image.url }}" alt="{{ event.title }}" class="img-fluid">
                 {% else %}
-                  <img src="{% static 'assets/img/restaurant/default-event.webp' %}" alt="Event" class="img-fluid">
+                  <img src="{% static 'farm pro/farm_1.jpg' %}" alt="MAU farm event" class="img-fluid">
                 {% endif %}
               </div>
               <div class="event-info">

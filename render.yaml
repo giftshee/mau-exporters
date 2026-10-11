@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mau-vegetables-exporters
+    runtime: python
+    buildCommand: bash build.sh
+    startCommand: python manage.py migrate --noinput && gunicorn mauP.wsgi:application
+    envVars:
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_ALLOWED_HOSTS
+        sync: false
+      - key: DJANGO_CSRF_TRUSTED_ORIGINS
+        sync: false

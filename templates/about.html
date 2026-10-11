@@ -1,220 +1,1073 @@
+
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}About{% endblock %}
+{% block title %}About Us | MAU Vegetables Exporters Limited{% endblock %}
 
 {% block content %}
 
-<!-- Flash Messages -->
+<!-- ==================== FLASH MESSAGES ==================== -->
 {% if messages %}
-  <div class="container mt-4">
+<section class="container mt-3" aria-label="Notifications">
     {% for message in messages %}
-      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         {{ message }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
+    </div>
     {% endfor %}
-  </div>
+</section>
 {% endif %}
 
-<!-- ==================== Hero Section ==================== -->
-<section id="hero" class="hero section py-5 bg-gradient" style="background: linear-gradient(135deg, #4caf50 0%, #81c784 100%); color: white;">
-  <div class="container" data-aos="fade-up">
-    <div class="row align-items-center gy-4">
 
-      <!-- Left Column: Content -->
-      <div class="col-lg-6">
-        <div class="p-4 bg-white bg-opacity-10 rounded-4 shadow-sm">
-          <div class="status-badge bg-light text-success fw-bold px-3 py-1 rounded-pill mb-3" style="width: fit-content; letter-spacing: 1px;">
-            Harvest Season Open
-          </div>
+<!-- ==================== ABOUT HERO ==================== -->
+<section id="about-hero" class="mau-about-hero py-5">
+    <div class="container py-lg-4">
 
-          <h1 class="display-5 fw-bold mb-4">Cultivating Nature’s Bounty for a Sustainable Future</h1>
-          <p class="lead mb-4 opacity-85">
-            Explore our innovative and eco-friendly farming practices that nurture the earth and deliver fresh, healthy produce.
-            Join us in embracing sustainable agriculture and community-driven growth.
-          </p>
+        <div class="row mb-5">
+            <div class="col-lg-9 mx-auto text-center">
+                <span class="mau-eyebrow">
+                    <i class="bi bi-flower1 me-2"></i>
+                    ABOUT MAU VEGETABLES
+                </span>
 
-          <div class="d-flex align-items-center mb-4 text-white-75 fs-5">
-            <i class="bi bi-clock-fill me-2"></i>
-            <span>Farm Visits: Mon - Sat, 8am - 6pm</span>
-          </div>
+                <h1 class="mau-about-title mt-3">
+                    Fresh From Nature.
+                    <span>Prepared for Your Market.</span>
+                </h1>
 
-          <div class="btn-group mb-4">
-            <a href="#farm-products" class="btn btn-success btn-lg shadow-sm me-3">
-              View Our Crops <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-            <a href="#farming-features" class="btn btn-outline-light btn-lg shadow-sm">
-              Learn About Our Practices
-            </a>
-          </div>
-
-          <div class="social-links mt-auto d-flex gap-3 fs-3">
-            <a href="#" class="text-white opacity-75 hover-opacity-100 transition" title="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-white opacity-75 hover-opacity-100 transition" title="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-white opacity-75 hover-opacity-100 transition" title="Twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="text-white opacity-75 hover-opacity-100 transition" title="YouTube"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="text-white opacity-75 hover-opacity-100 transition" title="Tiktok"><i class="bi bi-tiktok"></i></a>
-          </div>
+                <p class="mau-about-intro mt-3">
+                    Discover MAU Vegetables Exporters Limited and our
+                    commitment to quality vegetable produce, careful
+                    handling, and building lasting relationships with
+                    our customers.
+                </p>
+            </div>
         </div>
-      </div>
 
-      <!-- Right Column: Carousel & Admin Form -->
-      <div class="col-lg-6">
-        <div class="d-flex flex-column align-items-center px-3 py-4 bg-white rounded-4 shadow-sm">
+        <div class="row align-items-center g-4 g-xl-5">
 
-          <!-- Carousel -->
-          <div class="swiper hero-swiper w-100 rounded-4 overflow-hidden shadow" data-aos="zoom-out" data-aos-delay="100" style="max-height: 350px;">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 900,
-                "autoplay": { "delay": 4500 },
-                "effect": "fade",
-                "slidesPerView": 1,
-                "navigation": {
-                  "nextEl": ".swiper-button-next",
-                  "prevEl": ".swiper-button-prev"
-                }
-              }
-            </script>
+            <!-- Company introduction -->
+            <div class="col-lg-5">
+                <div class="mau-about-copy">
 
-            <div class="swiper-wrapper">
-              {% for slide in slides %}
-                <div class="swiper-slide">
-                  <div class="position-relative text-center">
-                    <img 
-                      src="{{ slide.image.url }}" 
-                      alt="{{ slide.alt_text }}" 
-                      class="img-fluid rounded-4 mx-auto" 
-                      style="height: 320px; object-fit: cover; max-width: 90%;"
-                    >
+                    <span class="mau-section-label">
+                        <span class="mau-label-line"></span>
+                        GROWING WITH PURPOSE
+                    </span>
+
+                    <h2 class="mt-3">
+                        Connecting Quality Produce with
+                        <span>Customer Needs</span>
+                    </h2>
+
+                    <p class="mt-3">
+                        At MAU Vegetables Exporters Limited, we believe
+                        that good produce deserves careful attention
+                        throughout its journey. We aim to serve our
+                        customers with a focus on product quality,
+                        thoughtful handling, and dependable service.
+                    </p>
+
+                    <p>
+                        Explore our products and learn more about the
+                        business behind the produce.
+                    </p>
+
+                    <div class="mau-about-points mt-4">
+
+                        <div class="mau-about-point">
+                            <span class="mau-point-icon">
+                                <i class="bi bi-check2-circle"></i>
+                            </span>
+                            <div>
+                                <h3>Quality-focused approach</h3>
+                                <p>Attention to the quality of the produce we handle.</p>
+                            </div>
+                        </div>
+
+                        <div class="mau-about-point">
+                            <span class="mau-point-icon">
+                                <i class="bi bi-box-seam"></i>
+                            </span>
+                            <div>
+                                <h3>Careful produce handling</h3>
+                                <p>A thoughtful approach to handling and presentation.</p>
+                            </div>
+                        </div>
+
+                        <div class="mau-about-point">
+                            <span class="mau-point-icon">
+                                <i class="bi bi-people"></i>
+                            </span>
+                            <div>
+                                <h3>Customer relationships</h3>
+                                <p>Building positive, lasting business relationships.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="{% url 'exporters_app:store' %}" class="btn mau-primary-btn">
+                            Explore Our Products
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+
+                        <a href="{% url 'exporters_app:contact' %}" class="btn mau-secondary-btn">
+                            Contact Us
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Produce carousel -->
+            <div class="col-lg-7">
+                <div class="mau-about-visual">
+
+                    <div class="mau-visual-heading">
+                        <div>
+                            <span>OUR PRODUCE</span>
+                            <h2>A closer look at MAU</h2>
+                        </div>
+
+                        <span class="mau-leaf-mark">
+                            <i class="bi bi-leaf"></i>
+                        </span>
+                    </div>
+
+                    <div class="swiper init-swiper hero-swiper mau-about-swiper">
+
+                        <script type="application/json" class="swiper-config">
+                        {
+                            "loop": true,
+                            "speed": 700,
+                            "autoplay": {
+                                "delay": 4500,
+                                "disableOnInteraction": false
+                            },
+                            "slidesPerView": 1,
+                            "spaceBetween": 0,
+                            "navigation": {
+                                "nextEl": ".mau-about-swiper .swiper-button-next",
+                                "prevEl": ".mau-about-swiper .swiper-button-prev"
+                            }
+                        }
+                        </script>
+
+                        <div class="swiper-wrapper">
+
+                            {% for slide in slides %}
+                            <div class="swiper-slide">
+                                <div class="mau-about-slide">
+
+                                    {% if slide.image %}
+                                    <img
+                                        src="{{ slide.image.url }}"
+                                        alt="{{ slide.alt_text|default:'MAU vegetable produce' }}"
+                                        {% if forloop.first %}
+                                        fetchpriority="high"
+                                        {% else %}
+                                        loading="lazy"
+                                        {% endif %}
+                                    >
+                                    {% else %}
+                                    <img
+                                        src="{% static 'farm pro/farm_1.jpg' %}"
+                                        alt="Vegetable farming"
+                                        loading="lazy"
+                                    >
+                                    {% endif %}
+
+                                    {% if slide.alt_text %}
+                                    <div class="mau-slide-caption">
+                                        {{ slide.alt_text }}
+                                    </div>
+                                    {% endif %}
+
+                                    {% if is_admin %}
+                                    <form method="POST"
+                                          class="mau-delete-slide"
+                                          onsubmit="return confirm('Delete this slide?');">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="delete_image" value="{{ slide.id }}">
+
+                                        <button type="submit"
+                                                class="btn btn-danger"
+                                                aria-label="Delete this slide"
+                                                title="Delete slide">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </form>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                            {% empty %}
+                            <div class="swiper-slide">
+                                <div class="mau-about-slide">
+                                    <img
+                                        src="{% static 'farm pro/farm_1.jpg' %}"
+                                        alt="Vegetable farming"
+                                        loading="lazy"
+                                    >
+                                    <div class="mau-slide-caption">
+                                        Quality produce, handled with care
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+
+                        {% if slides|length > 1 %}
+                        <button type="button"
+                                class="swiper-button-prev"
+                                aria-label="Previous image"></button>
+                        <button type="button"
+                                class="swiper-button-next"
+                                aria-label="Next image"></button>
+                        {% endif %}
+
+                    </div>
+
+                    <!-- Administrator upload panel -->
                     {% if is_admin %}
-                      <form method="POST" class="position-absolute top-0 end-0 m-3">
-                        {% csrf_token %}
-                        <input type="hidden" name="delete_image" value="{{ slide.id }}">
-                        <button type="submit" class="btn btn-sm btn-danger shadow-sm" title="Delete Image">
-                          <i class="bi bi-trash"></i>
-                        </button>
-                      </form>
+                    <div class="mau-upload-panel">
+                        <div class="mb-3">
+                            <span class="mau-upload-label">ADMINISTRATION</span>
+                            <h3>Manage About-page images</h3>
+                            <p>Add a new image to the carousel.</p>
+                        </div>
+
+                        <form method="POST" enctype="multipart/form-data" class="mau-upload-form">
+                            {% csrf_token %}
+
+                            <div class="mb-3">
+                                <label for="about-slide-image" class="form-label">Select image</label>
+                                <input type="file"
+                                       name="image"
+                                       id="about-slide-image"
+                                       class="form-control"
+                                       accept="image/*"
+                                       required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="about-slide-alt" class="form-label">Image description</label>
+                                <input type="text"
+                                       name="alt_text"
+                                       id="about-slide-alt"
+                                       class="form-control"
+                                       maxlength="150"
+                                       placeholder="e.g. Fresh green cabbages"
+                                       required>
+                            </div>
+
+                            <button type="submit" name="add_image" class="btn mau-primary-btn">
+                                <i class="bi bi-plus-circle me-2"></i>
+                                Add Slide
+                            </button>
+                        </form>
+                    </div>
                     {% endif %}
-                  </div>
+
                 </div>
-              {% empty %}
-                <div class="swiper-slide">
-                  <div class="text-center">
-                    <img 
-                      src="{% static 'assets/img/farming/default-slide.jpg' %}" 
-                      alt="Default Slide" 
-                      class="img-fluid rounded-4 mx-auto" 
-                      style="height: 320px; object-fit: cover; max-width: 90%;"
-                    >
-                  </div>
-                </div>
-              {% endfor %}
             </div>
 
-            <div class="swiper-button-next btn btn-success btn-lg rounded-circle shadow"></div>
-            <div class="swiper-button-prev btn btn-success btn-lg rounded-circle shadow"></div>
-          </div>
+        </div>
+    </div>
+</section>
 
-          {% if is_admin %}
-          <!-- Admin Carousel Form -->
-          <div class="admin-carousel-form mt-5 w-100">
-            <div class="card shadow-sm rounded-4">
-              <div class="card-body">
-                <h5 class="card-title mb-4 text-success">Manage Hero Slides</h5>
 
-                <form method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-                  {% csrf_token %}
+<!-- ==================== FARMING PRACTICES ==================== -->
+<section id="farming-features" class="mau-features-section py-5">
+    <div class="container py-lg-4">
 
-                  <div class="mb-3">
-                    <label for="image" class="form-label fw-semibold">Upload Image</label>
-                    <input type="file" name="image" id="image" class="form-control" required>
-                    <div class="invalid-feedback">Please select an image.</div>
-                  </div>
+        <div class="mau-section-heading text-center mb-5">
+            <span class="mau-eyebrow">
+                <i class="bi bi-leaf me-2"></i>
+                WHAT MATTERS TO US
+            </span>
 
-                  <div class="mb-3">
-                    <label for="alt_text" class="form-label fw-semibold">Alt Text</label>
-                    <input type="text" name="alt_text" id="alt_text" maxlength="150" class="form-control" placeholder="Describe the image..." required>
-                    <div class="invalid-feedback">Alt text is required.</div>
-                  </div>
+            <h2 class="mt-3">Our Farming Practices</h2>
 
-                  <button type="submit" name="add_image" class="btn btn-success fw-semibold">Add Slide</button>
-                </form>
-              </div>
+            <p>
+                Discover the care, attention and practices that help
+                bring fresh vegetable produce from the farm to the market.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            {% for feature in features %}
+            <div class="col-sm-6 col-lg-4">
+                <article class="mau-feature-card h-100">
+
+                    <div class="mau-feature-image-wrap">
+
+                        {% if forloop.counter == 1 %}
+                        <img
+                            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=85"
+                            alt="Young plants growing in a garden"
+                            class="mau-feature-image"
+                            loading="lazy">
+
+                        {% elif forloop.counter == 2 %}
+                        <img
+                            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=85"
+                            alt="Green agricultural fields"
+                            class="mau-feature-image"
+                            loading="lazy">
+
+                        {% elif forloop.counter == 3 %}
+                        <img
+                            src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=85"
+                            alt="Fresh vegetables ready for the market"
+                            class="mau-feature-image"
+                            loading="lazy">
+
+                        {% elif forloop.counter == 4 %}
+                        <img
+                            src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=800&q=85"
+                            alt="Healthy green plants growing"
+                            class="mau-feature-image"
+                            loading="lazy">
+
+                        {% else %}
+                        <img
+                            src="{% static 'farm pro/farm_1.jpg' %}"
+                            alt="Vegetable farming at MAU"
+                            class="mau-feature-image"
+                            loading="lazy">
+                        {% endif %}
+
+                        <span class="mau-feature-number">
+                            {% if forloop.counter < 10 %}0{% endif %}{{ forloop.counter }}
+                        </span>
+
+                        {% comment %} <div class="mau-feature-image-icon">
+                            <i class="bi {{ feature.icon }}"></i>
+                        </div> {% endcomment %}
+
+                    </div>
+
+                    <div class="mau-feature-content">
+                        <span class="mau-feature-kicker">MAU VEGETABLES</span>
+                        <h3>{{ feature.title }}</h3>
+                        <p>{{ feature.description }}</p>
+                        <div class="mau-feature-bottom-line"></div>
+                    </div>
+
+                </article>
             </div>
-          </div>
-          {% endif %}
+
+            {% empty %}
+            <div class="col-12">
+                <div class="mau-empty-state">
+                    <i class="bi bi-info-circle"></i>
+                    <p>
+                        Farming practices will appear here when
+                        feature information is added.
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
 
         </div>
-      </div>
-
     </div>
-  </div>
 </section>
-<!-- ================== /Hero Section =================== -->
+<!-- ==================== FARM STATISTICS ==================== -->
+<section id="farm-statistics" class="mau-statistics-section py-5">
+    <div class="container py-lg-4">
 
-<!-- ================== Farming Features Section =================== -->
-<section id="farming-features" class="section py-5 bg-white">
-  <div class="container" data-aos="fade-up">
-    <h2 class="section-title mb-5 text-center fw-bold" style="letter-spacing: 1px; color: #2e7d32;">
-      Our Sustainable Farming Practices
-    </h2>
+        <div class="mau-section-heading text-center mb-5">
+            <span class="mau-eyebrow">
+                <i class="bi bi-stars me-2"></i>
+                OUR JOURNEY
+            </span>
 
-    <div class="row g-4">
-      {% for feature in features %}
-        <div class="col-md-4 text-center p-4 rounded-4 shadow-sm border border-1 border-success bg-light">
-          <i class="bi {{ feature.icon }} display-4 text-success mb-3"></i>
-          <h5 class="fw-semibold mb-2">{{ feature.title }}</h5>
-          <p class="text-muted">{{ feature.description }}</p>
+            <h2 class="mt-3">Our Achievements &amp; Statistics</h2>
+
+            <p>
+                A snapshot of our growth, commitment to quality,
+                and dedication to delivering fresh farm produce.
+            </p>
         </div>
-      {% empty %}
-        <p class="text-center fs-5 text-muted">No farming features available at the moment.</p>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-<!-- ================== /Farming Features Section =================== -->
 
-<!-- ================== Farm Statistics Section =================== -->
-<section id="farm-statistics" class="section py-5 bg-gradient-light" style="background: #e8f5e9;">
-  <div class="container" data-aos="fade-up">
-    <h2 class="section-title mb-5 text-center fw-bold" style="color: #388e3c; letter-spacing: 1px;">
-      Farm Achievements & Statistics
-    </h2>
+        <div class="row justify-content-center g-4">
 
-    <div class="row justify-content-center g-4 text-center">
-      {% for stat in stats %}
-        <div class="col-6 col-md-3 p-4 bg-white rounded-4 shadow-sm border border-success">
-          <h3 class="display-4 text-success">{{ stat.number }}{{ stat.suffix }}</h3>
-          <p class="fs-5 fw-semibold text-muted">{{ stat.label }}</p>
+            {% for stat in stats %}
+            <div class="col-6 col-lg-3">
+                <div class="mau-stat-card h-100">
+
+                    <div class="mau-stat-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                    <h3 class="mau-stat-number">
+                        {{ stat.number }}{{ stat.suffix }}
+                    </h3>
+
+                    <p class="mau-stat-label">
+                        {{ stat.label }}
+                    </p>
+
+                    <div class="mau-stat-accent"></div>
+
+                </div>
+            </div>
+
+            {% empty %}
+            <div class="col-12">
+                <div class="mau-empty-state">
+                    <i class="bi bi-bar-chart"></i>
+                    <p>
+                        Business statistics will appear here when
+                        they become available.
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+
         </div>
-      {% empty %}
-        <p class="text-center fs-5 text-muted">Farm statistics are not available at this time.</p>
-      {% endfor %}
     </div>
-  </div>
 </section>
-<!-- ================== /Farm Statistics Section =================== -->
 
-<!-- Optional: Small custom styles -->
+<!-- ==================== ABOUT PAGE STYLES ==================== -->
 <style>
-  .hover-opacity-100:hover {
-    opacity: 1 !important;
-    transition: opacity 0.3s ease-in-out;
-  }
-  .btn-group .btn {
-    transition: transform 0.3s ease;
-  }
-  .btn-group .btn:hover {
-    transform: scale(1.05);
-  }
-  .status-badge {
-    font-size: 0.9rem;
-    text-transform: uppercase;
+/* General colours and typography */
+
+.mau-about-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 5% 5%, rgba(209,232,184,.4), transparent 36%),
+        linear-gradient(145deg,#f8fbf3 0%,#fff 55%,#edf5e6 100%);
+    color: #233b2b;
+}
+
+.mau-eyebrow,
+.mau-section-label,
+.mau-upload-label {
+    display: inline-flex;
+    align-items: center;
+    color: #347747;
+    font-size: .76rem;
+    font-weight: 800;
     letter-spacing: 2px;
-  }
+}
+
+.mau-eyebrow {
+    padding: 10px 16px;
+    border: 1px solid #d9e8d1;
+    border-radius: 50px;
+    background: rgba(255,255,255,.85);
+}
+
+.mau-about-title {
+    color: #183d29;
+    font-size: clamp(2.25rem,5vw,4.3rem);
+    font-weight: 850;
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.mau-about-title span,
+.mau-about-copy h2 span {
+    display: block;
+    color: #43864a;
+}
+
+.mau-about-intro {
+    max-width: 760px;
+    margin-inline: auto;
+    color: #667469;
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+.mau-label-line {
+    width: 32px;
+    height: 3px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background: #5a9c54;
+}
+
+.mau-about-copy h2 {
+    color: #203c2b;
+    font-size: clamp(1.8rem,3vw,2.6rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -.8px;
+}
+
+.mau-about-copy > p {
+    color: #68766b;
+    line-height: 1.85;
+}
+
+/* Introduction points */
+
+.mau-about-points {
+    display: grid;
+    gap: 20px;
+}
+
+.mau-about-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.mau-point-icon {
+    display: grid;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border-radius: 14px;
+    background: #e5f1df;
+    color: #347747;
+    font-size: 1.25rem;
+}
+
+.mau-about-point h3 {
+    margin: 2px 0 5px;
+    color: #294632;
+    font-size: 1rem;
+    font-weight: 750;
+}
+
+.mau-about-point p {
+    margin: 0;
+    color: #738075;
+    font-size: .92rem;
+    line-height: 1.6;
+}
+
+/* Buttons */
+
+.mau-primary-btn,
+.mau-secondary-btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 19px;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.mau-primary-btn {
+    border: 1px solid #347747;
+    background: #347747;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(52,119,71,.17);
+}
+
+.mau-primary-btn:hover {
+    transform: translateY(-2px);
+    border-color: #245c35;
+    background: #245c35;
+    color: #fff;
+}
+
+.mau-secondary-btn {
+    border: 1px solid #d4e1d0;
+    background: #fff;
+    color: #347747;
+}
+
+.mau-secondary-btn:hover {
+    transform: translateY(-2px);
+    border-color: #347747;
+    background: #f0f7eb;
+    color: #245c35;
+}
+
+/* Produce carousel */
+
+.mau-about-visual {
+    padding: 20px;
+    border: 1px solid rgba(220,232,214,.9);
+    border-radius: 26px;
+    background: rgba(255,255,255,.95);
+    box-shadow: 0 22px 60px rgba(36,70,42,.11);
+}
+
+.mau-visual-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 4px 3px 18px;
+}
+
+.mau-visual-heading > div > span {
+    color: #5b8c5c;
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.mau-visual-heading h2 {
+    margin: 5px 0 0;
+    color: #25452f;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.mau-leaf-mark {
+    display: grid;
+    flex: 0 0 45px;
+    width: 45px;
+    height: 45px;
+    place-items: center;
+    border-radius: 15px;
+    background: #edf6e8;
+    color: #43864a;
+    font-size: 1.4rem;
+}
+
+.mau-about-swiper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #edf4e9;
+}
+
+.mau-about-slide {
+    position: relative;
+    height: clamp(290px,38vw,440px);
+    overflow: hidden;
+    background: #e8f0e2;
+}
+
+.mau-about-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mau-about-slide::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 36%;
+    background: linear-gradient(transparent,rgba(13,35,19,.55));
+    content: "";
+    pointer-events: none;
+}
+
+.mau-slide-caption {
+    position: absolute;
+    z-index: 2;
+    right: 65px;
+    bottom: 22px;
+    left: 22px;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
+
+.mau-about-swiper .swiper-button-next,
+.mau-about-swiper .swiper-button-prev {
+    top: 50%;
+    width: 42px;
+    height: 42px;
+    margin-top: -21px;
+    border: 1px solid rgba(255,255,255,.65);
+    border-radius: 50%;
+    background: rgba(255,255,255,.94);
+    color: #347747;
+    box-shadow: 0 4px 15px rgba(0,0,0,.12);
+}
+
+.mau-about-swiper .swiper-button-next { right: 12px; }
+.mau-about-swiper .swiper-button-prev { left: 12px; }
+
+.mau-about-swiper .swiper-button-next::after,
+.mau-about-swiper .swiper-button-prev::after {
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.mau-about-swiper .swiper-button-next:hover,
+.mau-about-swiper .swiper-button-prev:hover {
+    background: #347747;
+    color: #fff;
+}
+
+.mau-about-empty {
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    color: #648068;
+    text-align: center;
+}
+
+.mau-about-empty > i {
+    margin-bottom: 12px;
+    font-size: 3rem;
+}
+
+.mau-about-empty h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.mau-about-empty p { margin-bottom: 0; }
+
+.mau-delete-slide {
+    position: absolute;
+    z-index: 5;
+    top: 12px;
+    right: 12px;
+}
+
+.mau-delete-slide .btn {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.2);
+}
+
+/* Administrator upload panel */
+
+.mau-upload-panel {
+    margin-top: 22px;
+    padding: 20px;
+    border: 1px solid #e1ebdc;
+    border-radius: 18px;
+    background: #f7faf4;
+}
+
+.mau-upload-panel h3 {
+    margin: 7px 0;
+    color: #294632;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.mau-upload-panel p {
+    margin-bottom: 15px;
+    color: #718071;
+    font-size: .9rem;
+}
+
+.mau-upload-form .form-label {
+    color: #3e5944;
+    font-size: .88rem;
+    font-weight: 700;
+}
+
+.mau-upload-form .form-control {
+    min-height: 45px;
+    border-color: #dce6d7;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.mau-upload-form .form-control:focus {
+    border-color: #70a876;
+    box-shadow: 0 0 0 .2rem rgba(67,134,74,.12);
+}
+
+/* Farming practice cards */
+
+.mau-features-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 0% 10%, rgba(218,238,207,.42), transparent 32%),
+        linear-gradient(180deg, #fff 0%, #f8fbf5 100%);
+}
+
+.mau-section-heading h2 {
+    color: #203c2b;
+    font-size: clamp(1.8rem,3vw,2.7rem);
+    font-weight: 850;
+    letter-spacing: -.7px;
+}
+
+.mau-section-heading > p {
+    max-width: 650px;
+    margin: 12px auto 0;
+    color: #718071;
+    line-height: 1.8;
+}
+
+.mau-feature-card {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #e1ebdc;
+    border-radius: 23px;
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(36,70,42,.07);
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+.mau-feature-card:hover {
+    transform: translateY(-8px);
+    border-color: #a9cea0;
+    box-shadow: 0 22px 45px rgba(36,70,42,.14);
+}
+
+.mau-feature-image-wrap {
+    position: relative;
+    height: 220px;
+    margin: 10px 10px 0;
+    overflow: hidden;
+    border-radius: 17px;
+    background: #e8f1e2;
+}
+
+.mau-feature-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .65s ease;
+}
+
+.mau-feature-card:hover .mau-feature-image {
+    transform: scale(1.08);
+}
+
+.mau-feature-image-wrap::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,48,23,.02) 35%, rgba(15,48,23,.38) 100%);
+    content: "";
+    pointer-events: none;
+}
+
+.mau-feature-number {
+    position: absolute;
+    z-index: 2;
+    top: 13px;
+    left: 13px;
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 12px;
+    background: rgba(255,255,255,.93);
+    color: #347747;
+    font-size: .78rem;
+    font-weight: 850;
+    box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+
+.mau-feature-image-icon {
+    position: absolute;
+    z-index: 3;
+    right: 17px;
+    bottom: -1px;
+    display: grid;
+    width: 53px;
+    height: 53px;
+    place-items: center;
+    border: 4px solid #fff;
+    border-radius: 17px;
+    background: linear-gradient(135deg,#56a34f,#26713d);
+    color: #fff;
+    font-size: 1.35rem;
+    box-shadow: 0 7px 18px rgba(39,113,61,.22);
+    transition: transform .3s ease;
+}
+
+.mau-feature-card:hover .mau-feature-image-icon {
+    transform: rotate(-7deg) scale(1.05);
+}
+
+.mau-feature-content {
+    position: relative;
+    padding: 25px 23px 23px;
+}
+
+.mau-feature-kicker {
+    display: block;
+    margin-bottom: 9px;
+    color: #6b9865;
+    font-size: .67rem;
+    font-weight: 850;
+    letter-spacing: 1.8px;
+}
+
+.mau-feature-card h3 {
+    margin: 0 0 12px;
+    color: #25452f;
+    font-size: 1.2rem;
+    font-weight: 850;
+    line-height: 1.4;
+}
+
+.mau-feature-card p {
+    margin: 0;
+    color: #6b796e;
+    font-size: .94rem;
+    line-height: 1.85;
+}
+
+.mau-feature-bottom-line {
+    width: 43px;
+    height: 4px;
+    margin-top: 21px;
+    border-radius: 5px;
+    background: linear-gradient(90deg,#347747,#9bc98b);
+    transition: width .35s ease;
+}
+
+.mau-feature-card:hover .mau-feature-bottom-line {
+    width: 78px;
+}
+
+/* Statistics */
+
+.mau-statistics-section {
+    background:
+        radial-gradient(ellipse at 90% 10%,rgba(211,233,199,.4),transparent 35%),
+        #f3f8ef;
+}
+
+.mau-stat-card {
+    padding: 28px 15px;
+    border: 1px solid #e0ead9;
+    border-radius: 19px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(36,70,42,.05);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.mau-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 32px rgba(36,70,42,.09);
+}
+
+.mau-stat-icon {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 13px;
+    place-items: center;
+    border-radius: 14px;
+    background: #e9f4e3;
+    color: #43864a;
+    font-size: 1.3rem;
+}
+
+.mau-stat-card h3 {
+    margin-bottom: 8px;
+    color: #347747;
+    font-size: clamp(1.8rem,3vw,2.6rem);
+    font-weight: 850;
+    overflow-wrap: anywhere;
+}
+
+.mau-stat-card p {
+    margin: 0;
+    color: #657467;
+    font-size: .95rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.mau-empty-state {
+    padding: 30px 20px;
+    border: 1px dashed #d5e4ce;
+    border-radius: 16px;
+    color: #718071;
+    text-align: center;
+}
+
+.mau-empty-state i {
+    display: block;
+    margin-bottom: 10px;
+    color: #6d9c65;
+    font-size: 2rem;
+}
+
+.mau-empty-state p { margin: 0; }
+
+/* Responsive adjustments */
+
+@media (max-width: 991.98px) {
+    .mau-about-title { letter-spacing: -1px; }
+    .mau-about-copy { padding-bottom: 10px; }
+    .mau-about-visual { padding: 15px; }
+}
+
+@media (max-width: 767.98px) {
+    .mau-feature-image-wrap { height: 205px; }
+    .mau-feature-content { padding: 23px 19px; }
+}
+
+@media (max-width: 575.98px) {
+    .mau-about-title { font-size: 2.15rem; }
+    .mau-about-intro { font-size: .98rem; line-height: 1.75; }
+    .mau-about-copy h2 { font-size: 1.8rem; }
+    .mau-about-visual { padding: 11px; border-radius: 19px; }
+    .mau-about-slide { height: 290px; }
+
+    .mau-about-swiper .swiper-button-next,
+    .mau-about-swiper .swiper-button-prev {
+        width: 35px;
+        height: 35px;
+        margin-top: -17px;
+    }
+
+    .mau-about-swiper .swiper-button-next::after,
+    .mau-about-swiper .swiper-button-prev::after {
+        font-size: 12px;
+    }
+
+    .mau-slide-caption {
+        right: 48px;
+        bottom: 16px;
+        left: 15px;
+        font-size: .82rem;
+    }
+
+    .mau-upload-panel { padding: 15px; }
+
+    .mau-primary-btn,
+    .mau-secondary-btn {
+        width: 100%;
+    }
+
+    .mau-feature-image-wrap { height: 220px; }
+    .mau-feature-card h3 { font-size: 1.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mau-feature-card,
+    .mau-feature-image,
+    .mau-feature-image-icon,
+    .mau-feature-bottom-line {
+        transition: none;
+    }
+
+    .mau-feature-card:hover,
+    .mau-feature-card:hover .mau-feature-image {
+        transform: none;
+    }
+}
 </style>
 
 {% endblock %}

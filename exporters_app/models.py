@@ -23,10 +23,10 @@ class Store(models.Model):
     """Farm products available in the store."""
     CATEGORY_CHOICES = [
         ('vegetables', 'Vegetables'),
-        ('fruits', 'Fruits'),
-        ('grains', 'Grains'),
-        ('dairy', 'Dairy'),
-        ('livestock', 'Livestock'),
+        ('Root vegetables', 'Root vegetables'),
+        ('Fruit vegetables', 'Fruit vegaetables'),
+        ('Potato products', 'Potato products'),
+        ('prepared potato', 'Prepared potato'),
     ]
 
     name = models.CharField(max_length=100)
