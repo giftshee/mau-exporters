@@ -2,14 +2,14 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Home | MAU Vegetables Exporters{% endblock %}
+{% block title %}MAU Vegetables Exporters Limited | Fresh Farm Produce{% endblock %}
 
 {% block content %}
 
 <style>
 /* =========================================================
-   MAU VEGETABLES EXPORTERS — PREMIUM HOMEPAGE HERO
-   Fresh green • Warm cream • Subtle gold
+   MAU VEGETABLES EXPORTERS — PREMIUM HOMEPAGE
+   Forest green • Warm cream • Subtle gold
 ========================================================= */
 
 #hero.mau-hero {
@@ -26,8 +26,8 @@
     overflow: hidden;
     padding: 42px 0 48px !important;
     background:
-        radial-gradient(ellipse at 90% 10%, rgba(217, 164, 65, .12), transparent 28%),
-        radial-gradient(ellipse at 4% 85%, rgba(50, 131, 74, .09), transparent 30%),
+        radial-gradient(ellipse at 90% 10%, rgba(217,164,65,.12), transparent 28%),
+        radial-gradient(ellipse at 4% 85%, rgba(50,131,74,.09), transparent 30%),
         var(--mau-cream);
 }
 
@@ -38,7 +38,7 @@
     height: 320px;
     top: -180px;
     left: 35%;
-    border: 1px solid rgba(50, 131, 74, .12);
+    border: 1px solid rgba(50,131,74,.12);
     border-radius: 50%;
     z-index: -1;
     pointer-events: none;
@@ -72,15 +72,15 @@
     width: fit-content;
     margin-bottom: 24px;
     padding: 10px 16px;
-    border: 1px solid rgba(50, 131, 74, .17);
+    border: 1px solid rgba(50,131,74,.17);
     border-radius: 50px;
-    background: rgba(255, 255, 255, .82);
+    background: rgba(255,255,255,.82);
     color: var(--mau-green-dark);
     font-size: 12px;
     font-weight: 800;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
-    box-shadow: 0 5px 18px rgba(25, 77, 50, .05);
+    box-shadow: 0 5px 18px rgba(25,77,50,.05);
 }
 
 #hero.mau-hero .mau-eyebrow i {
@@ -92,24 +92,22 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 0 !important;
+    margin-bottom: 16px !important;
     padding: 0;
     background: transparent;
     border: 0;
     color: var(--mau-green-dark);
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: .2px;
 }
 
 #hero.mau-hero .mau-status-dot {
-    display: inline-block;
     width: 9px;
     height: 9px;
     flex: 0 0 9px;
     border-radius: 50%;
     background: #39A95D;
-    box-shadow: 0 0 0 4px rgba(57, 169, 93, .13);
+    box-shadow: 0 0 0 4px rgba(57,169,93,.13);
 }
 
 #hero.mau-hero .headline {
@@ -132,7 +130,6 @@
     margin-bottom: 25px !important;
     color: var(--mau-text);
     font-size: 17px;
-    font-weight: 400;
     line-height: 1.9;
 }
 
@@ -145,7 +142,7 @@
     padding: 13px 17px;
     border: 1px solid #DCE8D8;
     border-radius: 14px;
-    background: rgba(255, 255, 255, .76);
+    background: rgba(255,255,255,.76);
     color: var(--mau-green-dark);
     font-size: 14px;
     font-weight: 650;
@@ -188,7 +185,7 @@
     border: 1px solid var(--mau-green);
     background: var(--mau-green);
     color: #fff;
-    box-shadow: 0 10px 22px rgba(50, 131, 74, .20);
+    box-shadow: 0 10px 22px rgba(50,131,74,.20);
 }
 
 #hero.mau-hero .btn-book:hover {
@@ -196,7 +193,7 @@
     border-color: var(--mau-green-dark);
     background: var(--mau-green-dark);
     color: #fff;
-    box-shadow: 0 14px 26px rgba(25, 77, 50, .23);
+    box-shadow: 0 14px 26px rgba(25,77,50,.23);
 }
 
 #hero.mau-hero .btn-store {
@@ -211,6 +208,8 @@
     background: var(--mau-soft-green);
     color: var(--mau-green-dark);
 }
+
+/* SOCIAL LINKS */
 
 #hero.mau-hero .social-links {
     display: flex;
@@ -252,7 +251,7 @@
     color: #fff;
 }
 
-/* RIGHT SIDE / IMAGE CAROUSEL */
+/* IMAGE CAROUSEL */
 
 #hero.mau-hero .mau-hero-visual {
     position: relative;
@@ -267,7 +266,7 @@
     right: 4%;
     bottom: 5%;
     left: 4%;
-    border: 1px solid rgba(50, 131, 74, .12);
+    border: 1px solid rgba(50,131,74,.12);
     border-radius: 36px;
     background: linear-gradient(145deg, #E8F3E4, #FDFCF4);
     transform: rotate(3deg);
@@ -297,10 +296,10 @@
     width: 100%;
     overflow: hidden;
     padding: 10px;
-    border: 1px solid rgba(255, 255, 255, .9);
+    border: 1px solid rgba(255,255,255,.9);
     border-radius: 28px;
     background: #fff;
-    box-shadow: 0 24px 65px rgba(25, 77, 50, .15);
+    box-shadow: 0 24px 65px rgba(25,77,50,.15);
 }
 
 #hero.mau-hero .img-container > img {
@@ -318,7 +317,7 @@
     transform: scale(1.025);
 }
 
-/* Carousel navigation */
+/* CAROUSEL NAVIGATION */
 
 #hero.mau-hero .hero-swiper .swiper-button-next,
 #hero.mau-hero .hero-swiper .swiper-button-prev {
@@ -326,11 +325,11 @@
     width: 47px;
     height: 47px;
     margin-top: -23px;
-    border: 1px solid rgba(255, 255, 255, .85);
+    border: 1px solid rgba(255,255,255,.85);
     border-radius: 50%;
     background: #fff;
     color: var(--mau-green) !important;
-    box-shadow: 0 7px 22px rgba(25, 77, 50, .15);
+    box-shadow: 0 7px 22px rgba(25,77,50,.15);
     transition: background .2s ease, color .2s ease, transform .2s ease;
 }
 
@@ -361,7 +360,7 @@
     color: #fff !important;
 }
 
-/* Admin controls */
+/* ADMIN CAROUSEL MANAGEMENT */
 
 #hero.mau-hero .mau-admin-card {
     overflow: hidden;
@@ -374,14 +373,10 @@
     padding: 24px;
 }
 
-#hero.mau-hero .mau-admin-card .card-title {
-    color: var(--mau-green-dark);
-    font-weight: 800;
-}
-
+#hero.mau-hero .mau-admin-card .card-title,
 #hero.mau-hero .mau-admin-card .form-label {
     color: var(--mau-green-dark);
-    font-weight: 650;
+    font-weight: 800;
 }
 
 #hero.mau-hero .mau-admin-card .form-control {
@@ -392,7 +387,7 @@
 
 #hero.mau-hero .mau-admin-card .form-control:focus {
     border-color: var(--mau-green);
-    box-shadow: 0 0 0 .2rem rgba(50, 131, 74, .12);
+    box-shadow: 0 0 0 .2rem rgba(50,131,74,.12);
 }
 
 #hero.mau-hero .mau-admin-card .btn-primary {
@@ -400,10 +395,15 @@
     background: var(--mau-green);
 }
 
+#hero.mau-hero .mau-admin-card .btn-primary:hover {
+    border-color: var(--mau-green-dark);
+    background: var(--mau-green-dark);
+}
+
 .mau-home-messages .alert {
     border: 0;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(25, 77, 50, .06);
+    box-shadow: 0 6px 20px rgba(25,77,50,.06);
 }
 
 /* TABLET */
@@ -569,6 +569,8 @@
     }
 }
 
+/* ACCESSIBILITY */
+
 @media (prefers-reduced-motion: reduce) {
     #hero.mau-hero *,
     #hero.mau-hero *::before,
@@ -580,46 +582,52 @@
 }
 </style>
 
-<!-- Flash Messages -->
+<!-- FLASH MESSAGES -->
 {% if messages %}
 <div class="container mt-3 mau-home-messages">
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         {{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"></button>
     </div>
     {% endfor %}
 </div>
 {% endif %}
 
-<!-- Premium Hero Section -->
+<!-- PREMIUM HOMEPAGE HERO -->
 <section id="hero" class="hero section mau-hero">
     <div class="container-fluid mau-hero-container" data-aos="fade-up">
         <div class="row mau-hero-row">
 
-            <!-- Left Column: Hero Content -->
+            <!-- LEFT COLUMN: COMPANY INTRODUCTION -->
             <div class="col-lg-6">
                 <div class="mau-hero-content d-flex flex-column justify-content-center h-100">
 
                     <div class="mau-eyebrow">
                         <i class="bi bi-leaf-fill"></i>
-                        Fresh from our farms
+                        Quality Produce • Trusted Partnerships
                     </div>
 
                     <div class="status-badge mb-3">
                         <span class="mau-status-dot"></span>
-                        Orders Open
+                        Enquiries Welcome
                     </div>
 
                     <h1 class="headline">
-                        Cultivating Quality,
-                        <span class="mau-heading-highlight">Harvesting Trust.</span>
+                        Fresh From Our Farms,
+                        <span class="mau-heading-highlight">
+                            Ready for Your Market.
+                        </span>
                     </h1>
 
                     <p class="description">
-                        Experience the richness of nature through our fresh farm produce.
-                        Grown with care and harvested with integrity, bringing quality
-                        vegetables from our fields closer to your table.
+                        Discover quality vegetables from MAU Vegetables Exporters
+                        Limited. We are committed to careful handling, dependable
+                        service, and building lasting partnerships with buyers
+                        seeking fresh farm produce.
                     </p>
 
                     <div class="opening-hours">
@@ -627,47 +635,55 @@
                         <span>Available Daily: 6:00 AM – 6:00 PM</span>
                     </div>
 
-                    <!-- FIXED: Use Django URL names rather than page-local anchors -->
+                    <!-- CALL-TO-ACTION BUTTONS -->
                     <div class="mau-action-buttons mb-4">
-                        <a href="{% url 'exporters_app:booking' %}" class="btn btn-book">
-                            Book an Order
+                        <a href="{% url 'exporters_app:booking' %}"
+                           class="btn btn-book">
+                            Enquire About an Order
                             <i class="bi bi-arrow-right"></i>
                         </a>
 
-                        <a href="{% url 'exporters_app:store' %}" class="btn btn-store">
+                        <a href="{% url 'exporters_app:store' %}"
+                           class="btn btn-store">
                             <i class="bi bi-basket2"></i>
-                            View Farm Products
+                            Explore Our Produce
                         </a>
                     </div>
 
-                    <!-- Replace placeholder social URLs with the company's real profiles -->
+                    <!-- SOCIAL LINKS
+                         Replace placeholder URLs with official company profiles. -->
                     <div class="social-links mt-auto">
                         <a href="https://www.facebook.com/YourPage"
-                           target="_blank" rel="noopener noreferrer"
+                           target="_blank"
+                           rel="noopener noreferrer"
                            aria-label="Facebook">
                             <i class="bi bi-facebook"></i>
                         </a>
 
                         <a href="https://www.instagram.com/YourPage"
-                           target="_blank" rel="noopener noreferrer"
+                           target="_blank"
+                           rel="noopener noreferrer"
                            aria-label="Instagram">
                             <i class="bi bi-instagram"></i>
                         </a>
 
                         <a href="https://www.twitter.com/YourPage"
-                           target="_blank" rel="noopener noreferrer"
+                           target="_blank"
+                           rel="noopener noreferrer"
                            aria-label="Twitter">
                             <i class="bi bi-twitter"></i>
                         </a>
 
                         <a href="https://www.youtube.com/YourPage"
-                           target="_blank" rel="noopener noreferrer"
+                           target="_blank"
+                           rel="noopener noreferrer"
                            aria-label="YouTube">
                             <i class="bi bi-youtube"></i>
                         </a>
 
                         <a href="https://www.tiktok.com/YourPage"
-                           target="_blank" rel="noopener noreferrer"
+                           target="_blank"
+                           rel="noopener noreferrer"
                            aria-label="TikTok">
                             <i class="bi bi-tiktok"></i>
                         </a>
@@ -676,13 +692,12 @@
                 </div>
             </div>
 
-            <!-- Right Column: Farm Image Carousel and Admin Controls -->
+            <!-- RIGHT COLUMN: FARM IMAGE CAROUSEL -->
             <div class="col-lg-6">
                 <div class="mau-hero-visual d-flex flex-column align-items-center">
 
                     <div class="mau-image-backdrop" aria-hidden="true"></div>
 
-                    <!-- Image Carousel -->
                     <div class="swiper hero-swiper init-swiper w-100"
                          data-aos="zoom-out"
                          data-aos-delay="100">
@@ -708,6 +723,7 @@
                         </script>
 
                         <div class="swiper-wrapper">
+
                             {% for slide in carousel_images %}
                             <div class="swiper-slide">
                                 <div class="img-container position-relative text-center">
@@ -725,7 +741,10 @@
                                           class="position-absolute top-0 end-0 m-3"
                                           onsubmit="return confirm('Are you sure you want to delete this farm image?');">
                                         {% csrf_token %}
-                                        <input type="hidden" name="delete_image" value="{{ slide.id }}">
+
+                                        <input type="hidden"
+                                               name="delete_image"
+                                               value="{{ slide.id }}">
 
                                         <button type="submit"
                                                 class="btn btn-sm btn-danger"
@@ -738,17 +757,37 @@
 
                                 </div>
                             </div>
-
-                            
+                            {% empty %}
+                            <div class="swiper-slide">
+                                <div class="img-container">
+                                    <div class="d-flex flex-column align-items-center justify-content-center text-center p-4"
+                                         style="min-height: 290px; background: #E7F2E3; border-radius: 20px;">
+                                        <i class="bi bi-image"
+                                           style="font-size: 3rem; color: #32834A;"></i>
+                                        <h3 class="mt-3"
+                                            style="color: #194D32;">
+                                            Fresh Farm Produce
+                                        </h3>
+                                        <p class="mb-0"
+                                           style="color: #405044;">
+                                            Farm images will appear here when available.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                             {% endfor %}
+
                         </div>
 
-                        <div class="swiper-button-next" aria-label="Next farm image"></div>
-                        <div class="swiper-button-prev" aria-label="Previous farm image"></div>
+                        <div class="swiper-button-next"
+                             aria-label="Next farm image"></div>
+
+                        <div class="swiper-button-prev"
+                             aria-label="Previous farm image"></div>
                     </div>
 
+                    <!-- ADMIN-ONLY CAROUSEL MANAGEMENT -->
                     {% if is_admin %}
-                    <!-- Admin Carousel Management -->
                     <div class="admin-carousel-form mt-4 w-100">
                         <div class="card shadow-sm mau-admin-card">
                             <div class="card-body">
@@ -766,7 +805,10 @@
                                     {% csrf_token %}
 
                                     <div class="mb-3">
-                                        <label for="image" class="form-label">Farm Image</label>
+                                        <label for="image" class="form-label">
+                                            Farm Image
+                                        </label>
+
                                         <input
                                             type="file"
                                             name="image"
@@ -778,7 +820,10 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="alt_text" class="form-label">Image Description</label>
+                                        <label for="alt_text" class="form-label">
+                                            Image Description
+                                        </label>
+
                                         <input
                                             type="text"
                                             name="alt_text"
@@ -790,7 +835,9 @@
                                         >
                                     </div>
 
-                                    <button type="submit" name="add_image" class="btn btn-primary">
+                                    <button type="submit"
+                                            name="add_image"
+                                            class="btn btn-primary">
                                         <i class="bi bi-cloud-arrow-up me-2"></i>
                                         Add Farm Image
                                     </button>
