@@ -4,6 +4,7 @@ Django settings for mauP project.
 """
 
 from pathlib import Path
+from urllib.parse import urlparse, unquote
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,8 +30,6 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
-# Set this in Render to your actual public HTTPS URL origin,
-# for example: https://your-service.onrender.com
 CSRF_TRUSTED_ORIGINS = [
     origin.strip()
     for origin in os.environ.get(
@@ -110,15 +109,46 @@ WSGI_APPLICATION = "mauP.wsgi.application"
 
 
 # ============================================================
-# DATABASE — KEEP SQLITE FOR NOW
+# DATABASE
+# PostgreSQL on Render; SQLite for local development
 # ============================================================
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+DATABASE_URL = os.environ.get("DATABASE_URL", "").strip()
+
+if DATABASE_URL:
+    db_url = urlparse(DATABASE_URL)
+
+    if db_url.scheme not in ("postgres", "postgresql"):
+        raise ValueError(
+            "DATABASE_URL must be a PostgreSQL connection URL."
+        )
+
+    if not db_url.hostname or not db_url.path.strip("/"):
+        raise ValueError(
+            "DATABASE_URL is missing its database name or hostname."
+        )
+
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": unquote(db_url.path.lstrip("/")),
+            "USER": unquote(db_url.username or ""),
+            "PASSWORD": unquote(db_url.password or ""),
+            "HOST": db_url.hostname,
+            "PORT": db_url.port or 5432,
+            "OPTIONS": {
+                "sslmode": "require",
+            },
+            "CONN_MAX_AGE": 60,
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 
 # ============================================================
@@ -224,13 +254,21 @@ MPESA_CALLBACK_URL = os.environ.get(
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = os.environ.get("EMAIL_HOST", "")
 EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "587"))
-EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", "True").lower() == "true"
+EMAIL_USE_TLS = (
+    os.environ.get("EMAIL_USE_TLS", "True").lower() == "true"
+)
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
+
 DEFAULT_FROM_EMAIL = os.environ.get(
     "DEFAULT_FROM_EMAIL",
     EMAIL_HOST_USER
 )
+
+
+# ============================================================
+# LOGGING
+# ============================================================
 
 LOGGING = {
     "version": 1,

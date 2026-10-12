@@ -59,19 +59,82 @@ def home(request):
             "is_admin": False,
         })
 
+
 def about(request):
+    from django.contrib import messages
+    from django.shortcuts import redirect, render, get_object_or_404
+
     team = TeamMember.objects.all()
     features = Feature.objects.all()
     stats = FarmStatistic.objects.all()
-    slides = HeroSlide.objects.all()  # add this line
+    slides = HeroSlide.objects.all()
+
+    is_admin_user = (
+        request.user.is_authenticated
+        and (request.user.is_staff or request.user.is_superuser)
+    )
+
+    # Handle carousel management for administrators only.
+    if request.method == "POST":
+        if not is_admin_user:
+            messages.error(
+                request,
+                "You do not have permission to manage carousel images."
+            )
+            return redirect("exporters_app:about")
+
+        # Upload a new About-page slide.
+        if "add_image" in request.POST:
+            image = request.FILES.get("image")
+            alt_text = request.POST.get("alt_text", "").strip()
+
+            if not image:
+                messages.error(request, "Please select an image.")
+            elif len(alt_text) > 150:
+                messages.error(
+                    request,
+                    "Alt text must not exceed 150 characters."
+                )
+            else:
+                try:
+                    HeroSlide.objects.create(
+                        image=image,
+                        alt_text=alt_text
+                    )
+                    messages.success(
+                        request,
+                        "About-page image added successfully."
+                    )
+                except Exception:
+                    messages.error(
+                        request,
+                        "The image could not be uploaded. Please try again."
+                    )
+
+            return redirect("exporters_app:about")
+
+        # Delete only an About-page slide.
+        elif "delete_image" in request.POST:
+            slide_id = request.POST.get("delete_image")
+            slide = get_object_or_404(HeroSlide, id=slide_id)
+            slide.delete()
+
+            messages.success(
+                request,
+                "About-page image deleted successfully."
+            )
+            return redirect("exporters_app:about")
 
     context = {
-        'team': team,
-        'features': features,
-        'stats': stats,
-        'slides': slides,   # pass slides in context
+        "team": team,
+        "features": features,
+        "stats": stats,
+        "slides": slides,
+        "is_admin": is_admin_user,
     }
+
     return render(request, "about.html", context)
+
 
 def store(request):
     items = Store.objects.all()
